@@ -1,0 +1,70 @@
+<!-- ver restaurante seleccionado en detalle al hacer click -->
+
+<ion-header>
+    <ion-toolbar style="display: flex; justify-content: space-between; align-items: center;">
+        <ion-buttons slot="start" style="width: 20%; background-color: #f35c5c; border-radius: 5px;">
+            <ion-back-button defaultHref="/home"></ion-back-button>
+        </ion-buttons>
+
+        <!-- titulo del restaurante seleccionado -->
+        <ion-title>{{ restaurante()?.documentName }}</ion-title>
+
+        <!-- <ion-item slot="end">
+            @for (dev in desarrollador) {
+            <ion-label>{{ dev }}</ion-label>
+            }
+        </ion-item> -->
+      
+    </ion-toolbar>
+    <!-- datos del desarrollador en el footer con  -->
+    
+        
+    
+</ion-header>
+
+<ion-content>
+    @if (restaurante()) {
+
+    <ion-list>
+        <ion-item>
+            <ion-label>Nombre</ion-label>
+            <ion-label>{{ restaurante()?.documentName }}</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Localidad</ion-label>
+            <ion-label>{{ restaurante()?.locality }}</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Provincia</ion-label>
+            <ion-label>{{ restaurante()?.territory }}</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Telefono</ion-label>
+            <ion-label>{{ restaurante()?.phone }}</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Direccion</ion-label>
+            <ion-label>{{ restaurante()?.address }}</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Web</ion-label>
+            <ion-label>{{ restaurante()?.web }}</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Estrellas Michelin</ion-label>
+            <ion-label>{{ restaurante()?.michelinStar }}</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Soles Repsol</ion-label>
+            <ion-label>{{ restaurante()?.repsolSun }}</ion-label>
+        </ion-item>
+    </ion-list>
+    }@else{
+    <ion-item>
+        <ion-label>No hay restaurante seleccionado</ion-label>
+    </ion-item>
+
+
+    }
+
+</ion-content>
